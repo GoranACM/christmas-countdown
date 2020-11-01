@@ -39,13 +39,22 @@
   --fixed-width: 620px;
 }
 
+@font-face {
+  font-family: christmasLights;
+  src: url('ChristmasLightsIndoor.ttf');
+}
+
+@font-face {
+  font-family: christmasSnow;
+  src: url('ThePerfectChristmas.ttf');
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
-  line-height: 1.2;
-  font-size: 2.2rem;
+  /* font-size: 2.2rem; */
 }
 
 path {
@@ -56,15 +65,19 @@ path {
 .timer {
   position: relative;
   bottom: 15rem;
-  font-size: 2rem;
   text-align: center;
 }
 
 .interval {
-  height: 5rem;
+  line-height: 0.9;
+  font-family: christmasSnow;
+  font-size: 3rem;
+  height: 6rem;
+  min-height: 6rem;
   align-content: center;
-  margin: 0.2rem;
-  border: 0.1rem solid red;
+  margin: 0.6rem;
+  border-bottom: 0.1rem solid red;
+  border-radius: 1rem;
 }
 
 span {
@@ -77,9 +90,9 @@ main {
   place-items: center;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 3rem;
+text {
+  font-size: 2.6rem;
+  font-family: christmasLights, sans-serif;
 }
 
 .container {
