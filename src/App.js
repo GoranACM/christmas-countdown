@@ -5,7 +5,7 @@ function App() {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
 
-    let difference = +new Date(`25/12/${year}`) - +new Date();
+    let difference = +new Date(`12/25/${year}`) - +new Date();
 
     let timeLeft = {};
 
@@ -22,6 +22,7 @@ function App() {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [year] = useState(new Date().getFullYear());
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,7 +31,34 @@ function App() {
     return () => clearTimeout(timer);
   });
 
-  return <></>;
+  const timerComponents = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
+
+    timerComponents.push(
+      <span>
+        {timeLeft[interval]} {interval}{' '}
+      </span>
+    );
+  });
+
+  return (
+    <>
+      <div>
+        <h1>Christmas {year} countdown</h1>
+      </div>
+      <div>
+        {timerComponents.length ? (
+          timerComponents
+        ) : (
+          <span>MERRY CHRISTMAS!</span>
+        )}
+      </div>
+    </>
+  );
 }
 
 export default App;
