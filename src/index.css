@@ -52,8 +52,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
-  background: var(--clr-grey-10);
+  /* background: url(gifts.jpg); */
+  background-image: url(christmas1.jpg);
+  background-repeat: no-repeat;
+  opacity: 50;
   color: var(--clr-grey-1);
+  max-height: var(--fixed-width);
   /* font-size: 2.2rem; */
 }
 
@@ -64,20 +68,21 @@ path {
 
 .timer {
   position: relative;
-  bottom: 15rem;
+  bottom: 25rem;
   text-align: center;
 }
 
 .interval {
-  line-height: 0.9;
+  line-height: 0.6;
   font-family: christmasSnow;
   font-size: 3rem;
   height: 6rem;
   min-height: 6rem;
   align-content: center;
   margin: 0.6rem;
-  border-bottom: 0.1rem solid red;
+  /* border-bottom: 0.1rem solid red; */
   border-radius: 1rem;
+  font-size: 4rem;
 }
 
 span {
@@ -85,7 +90,7 @@ span {
 }
 
 main {
-  min-height: 100vh;
+  max-height: 45vh;
   display: grid;
   place-items: center;
 }
@@ -98,4 +103,62 @@ text {
 .container {
   width: 80vw;
   max-width: var(--fixed-width);
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    background-image: url(christmas2.jpg);
+    opacity: 50;
+    color: var(--clr-grey-1);
+    max-height: var(--fixed-width);
+  }
+
+  .timer {
+    top: 1rem;
+    text-align: center;
+  }
+
+  .interval {
+    line-height: 0.5;
+    font-family: christmasSnow;
+    font-size: 3rem;
+    height: 6rem;
+    min-height: 6rem;
+    align-content: center;
+    margin: 0.6rem;
+    /* border-bottom: 0.1rem solid red; */
+    border-radius: 1rem;
+    font-size: 4rem;
+  }
+  /* 
+  path {
+    top: 2;
+    position: relative;
+  } */
+
+  span {
+    margin: 0;
+  }
+
+  main {
+    max-height: 45vh;
+    display: grid;
+    place-items: center;
+  }
+
+  svg {
+    margin-top: 1rem;
+  }
+
+  text {
+    font-size: 2.6rem;
+    font-family: christmasLights, sans-serif;
+  }
+
+  .container {
+    width: 80vw;
+    max-width: var(--fixed-width);
+  }
 }
